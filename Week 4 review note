@@ -1,0 +1,169 @@
+#开始整理第四周笔记
+1关系
+定义:n元关系是n个集合的笛卡尔积的子集。
+R ⊆ S1×S2×...×Sn
+表示:为了展示由关系 R关联的元组，我们写成: (x1, x2, ..., xn) ∈ R 或 R(x1,x2,...,xn)
+二元关系:当n=2时，我们有二元关系R ⊆ S ×T，用于表示相关的对，我们写成: (x, y) ∈ R or R(x,y) or xRy
+定义域:U = S x S₂x...x S,是关系R的定义域，我们称R为关于∪的关系(如果 S1=S2 =...= Sn= S，且n清晰时，我们称R为关于s的关系)。
+关系的定义类似于集合，可以通过以下方式定义:
+显式枚举:通过有关的k-元组的明确列举来定义R(在二元关系的情况下是有序对)
+通过性质:通过确定整个SxS2x...x S 中相关元组的性质来定义。
+通过其他关系构造:可以通过其他关系的构建(例如并集、交集、补集等)来定义关系
+
+2 二元关系
+二元关系是S和T的笛卡尔积的子集，即有序对的集合。也可以说是在S和T之间的关系，从S到T的关系，或者在S上的关系(如果S=T)
+例如，特殊(平凡)关系包括:
+恒等关系:包含对角线上的元素，即相等的关系。
+空关系:即空集0，不包含任何元素。
+全域关系:表示整个SxS的关系，记为U=SxS
+
+3 关系运算
+逆关系: If R ⊆ S ×T is a relation, then R← ⊆ T ×S:
+ R← def ={(t,s) ∈ T ×S : (s,t) ∈ R}
+复合关系: If R1 ⊆ S ×T and R2 ⊆ T ×U then
+ R1;R2 ⊆ S ×U:
+ R1;R2 def={(s,u) ∈ S ×U : there exists t ∈ T such that
+ (s, t) ∈ R1 and (t,u) ∈ R2}.
+ ！(R←)← =R
+
+4 关系的象域
+ Given R ⊆ S ×T, A⊆S, and B ⊆T.
+定义
+A的关系象域, R(A):
+ R(A) def={t ∈T : (s,t) ∈R for some s ∈ A}
+B的逆象域, R←(B):
+ R←(B) def ={s ∈S : (s,t) ∈ R for some t ∈ B}
+关系逆象域实际上就是关系的逆关系的象域。
+
+5二元关系（背诵原文）
+A binary relation R ⊆ S ×T is:
+ Definition
+ (Fun) functional For all s ∈ S there is at most one t ∈ T such that (s,t) ∈ R
+ (Tot) total  For all s ∈ S there is at least one t ∈ T such that (s,t) ∈ R
+ (Inj) injective  For all t ∈ T there is at most one s ∈ S such that (s,t) ∈ R
+ (Sur) surjective  For all t ∈ T there is at least one s ∈ S such that (s,t) ∈ R
+ (Bij) bijective Injective and surjective
+
+6偏序
+partial function is a binary relation that is (Fun).
+ A function is a binary relation that is (Fun) and (Tot).
+ An injection is a function that is (Inj).
+ A surjection is a function that is (Sur).
+ A bijection is a function that is (Bij).
+
+7 二元关系的性质
+(R) reflexive For all x ∈ S: (x,x) ∈ R
+(AR) antireflexive  For all x ∈ S: (x,x) ∉ R
+(S) symmetric  For all x,y ∈ S: If (x,y) ∈ R then (y,x) ∈ R
+(AS) antisymmetric For all x,y ∈ S: If (x,y) and (y,x) ∈ R then x = y
+(T) transitive For all x,y,z ∈ S: If (x,y) and (y,z) ∈ R then (x,z) ∈ R
+(S), (AS), (T) 是条件语句 - 如果没有任何事情满足“if”部分，则它们将成立。
+
+8 注意
+对称性和反对称性
+-个关系可以同时具有对称性和反对称性。特别地，当关系R仅由形式为(x,x)，其中必E S的一些对组成时，关系既是对称的又是反对称的。自反性和反自反性:
+一个关系不能同时具有自反性和反自反性(除非S=0)注意:
+非自反性和非对称性不同于反自反性和反对称性。
+
+9 一些例子
+(a)具有属性(AS)、(T)、但不具有属性 (R):
+严格的数字顺序æ < y:例如，关系 R可以定义为 R ≡{(1,2),(2,3),(3,4),...}≤但有一些对 (x,x) 被移除:例如，关系 见 可以定义为 R ={(1,2),(1,3),(2,3),(2,4),(3,4),...}。
+是素数因子:如果p是素数且pn，则见中存在对(p,n):例如，对于p=2，n=4，则存在对(2,4)。
+·不具有自反性:例如，对(11)不属于关系 R。
+·对于(p,p)和(p,n)(其中p是素数且 pln)，传递性才有意义,
+(b)具有属性(S)、但不具有属性(R)、(T):
+最简单的例子-不等式:例如，关系R可以定义为 R ={(1,2),(2,3),(1,3),...}。
+
+10函数
+函数f:S→>T是-个二元关系  f ⊆ S ×T ，满足(Fun)和(Tot)。也就是说，对于集合S 中的每个s ∈ S，存在且仅存在一个t ∈ T ，使得(s,t)∈ f。
+ We write f(s) for the unique element related to s.
+ We write TS for the set of all functions from S to T.
+
+11函数重要fact
+ Suppose f : S → T and g : T →U are bijections
+f ← : T →S and g← :U →T are bijections
+ (f ; g) : S → U is a bijection
+ f ; f ← = IS = {(x,x) : x ∈ S} and
+ f ←;f = IT ={(x,x) : x ∈ T}
+f : S →T is a bijection if and only if there is a g : T → S such
+ that f ;g = IS and g;f = IT
+
+12等价关系和等价类
+A binary relation R ⊆ S ×S is equivalence relation if it satisfies (R), (S), (T).
+ Suppose R ⊆ S ×S is an equivalence relation
+ The equivalence class [s] (w.r.t. R) of an element s ∈ S is
+ [s] = {t : t ∈ S and sRt}
+13 等价类重要的fact
+ s R t if and only if [s] = [t].
+
+14划分
+ A partition of a set S is a collection of sets S1,...,Sk such that
+ Si and Sj are disjoint (for i= j)
+ S =S1∪S2∪···∪Sk = k
+ i=1Si
+
+15偏序
+ A partial order ⪯ on S satisfies (R), (AS), (T).
+ We call (S,⪯) a poset — partially ordered set
+
+16 偏序中的最大元，最小元，极大元，极小元
+Let (S,⪯) be a poset.
+ Minimal element: x such that there is no y= x with y ⪯ x
+ Maximal element: x such that there is no y= x with x ⪯ y
+ Minimum (least) element: x such that x ⪯ y for all y ∈ S
+ Maximum (greatest) element: x such that y ⪯ x for all y ∈S
+在偏序集中可能存在多个最小/最大元素。
+如果存在最小/最大元素，那么它们是唯一的最小/最大元素。
+在有限偏序集中，最小/最大元素总是存在的，但在无限偏序集中不一定存在最小/最大元素。
+
+17 上限下限
+Let (S,⪯) be a poset.
+ x is an upper bound for A if a ⪯ x for all a ∈ A
+ x is a lower bound for A if x ⪯ a for all a ∈ A
+ The set of upper bounds for A is defined as
+ ub(A) = {x : a ⪯ x for all a ∈ A}
+ The set of lower bounds for A is defined as
+ lb(A) = {x : x ⪯ a for all a ∈ A}
+ The least upper bound of A, lub(A), is the minimum of
+ ub(A) (if it exists)
+ The greatest lower bound of A, glb(A) is the maximum of
+ lb(A) (if it exists)
+我觉得这句话很关键，证明题可能会用
+To show x is glb(A) you need to show:
+ x is a lower bound: x ⪯ a for all a ∈ A.
+ x is the greatest of all lower bounds: If y ⪯ a for all a ∈ A
+ then y ⪯ x.
+Pow(X) ordered by ⊆.
+ glb(A,B) = A∩B
+ lub(A,B) = A∪B
+18 格和完全格
+ Let (S,⪯) be a poset.
+ (S,⪯) is a lattice if lub(x,y) and glb(x,y) exist for every
+ pair of elements x,y ∈ S.
+ (S,⪯) is a complete lattice if lub(A) and glb(A) exist for
+ every subset A ⊆ S.
+一个有限的格总是一个完备格。
+一个无限格不一定对于任意无限子集都有最小上界（或者没有最大下界），特别是对于其中的所有元素可能不存在这样的界限。
+
+19全序
+A total order is a partial order that also satisfies:
+ (L) Linearity (any two elements are comparable):
+ For all x,y either: x ≤ y or y ≤ x (or both if x = y)
+这句话指出了有限集上的所有全序都是“同构”的，而在无限集上存在着多种可能性。
+
+20 拓扑排序
+For a poset (S,⪯) any total order ≤ that is consistent with ⪯ (if
+ a ⪯b then a ≤b) is called a topological sort.
+
+21良序集
+ A well-ordered set is a poset where every subset has a least
+ element.
+并不要求良序集中存在最大元素。
+
+21排序方式
+Product order: Given posets (S,⪯S) and (T,⪯T), define:
+ (s, t) ⪯ (s′,t′) if s ⪯S s′ and t ⪯T t′
+ Lexicographic order Given posets (S,⪯S) and (T,⪯T), define:
+ (s, t) ≤lex (s′,t′) if s ⪯S s′ or (s = s′ and t ⪯T t′)
+ Extension to words: λ ≤lex w for all words
+ Lenlex order: Lexicographic ordering, but order by length first.
