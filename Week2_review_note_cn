@@ -1,0 +1,87 @@
+#终于到第二周了，加油！
+1 集合的运算
+A\B– set difference, relative complement (a but not b):
+ A\B =A∩Bc
+ A⊕B–symmetric difference (a and not b or b and not a; also
+ known as a or b exclusively; a xor b):
+ A⊕B =(A\B)∪(B \A)
+
+2集合相等的条件
+两个集合相等 (A = B) 的条件：
+如果它们包含相同的元素。
+证明两个集合相等的方法：
+检查所有元素。
+展示 A 包含于 B（A ⊆ B）且 B 包含于 A（B ⊆ A）。
+使用集合运算法则。
+
+3集合的定义
+集合是对象（元素）的集合。如果 x 是集合 A 的元素，我们写作 x ∈ A。
+一个集合由其元素的集合定义。不考虑元素的顺序和重复。
+我们区分元素和由单个元素组成的集合。因此，总是有 a = {a}。
+空集合 ∅ = {} 没有元素；
+非空集合 {{}} 是非空的 — 它有一个元素。
+
+4子集的定义
+对于集合 S 和 T，如果 S 中的每个元素都是 T 中的元素，则我们称 S 是 T 的子集，记作 S ⊆ T。
+注意：S ⊆ T 包括 S = T 的情况。
+如果 S 是 T 的子集但不等于 T，则称 S 是 T 的真子集，记作 S ⊂ T。
+空集合 ∅ 是任何集合 S 的子集。
+任何集合 S 都是它所属的宇宙集合 U 的子集。
+集合的包含关系可以是嵌套的，例如：自然数的正整数子集是整数，整数的子集是有理数，有理数的子集是实数。
+集合中的元素和集合本身的子集是两个不同的概念。
+如果 a 是集合 {a, b} 中的一个元素，那么 a 并不是 {a, b} 的子集，而是集合 {a, b} 中的元素之一。
+但是，如果 {a} 是集合 {a, b} 的子集，因为 {a} 中的元素 a 也是集合 {a, b} 中的元素。
+
+5集合的定义
+可以直接列举元素
+或通过描述元素必须满足的属性来定义集合，这些属性通常以逻辑条件 P(x) 的形式给出。
+例如，当全集 U 是自然数集 N，属性 P(x) 是“x 是偶数”时：
+{x : x ∈ N and x 是偶数} = {0, 2, 4, ...}，这个集合包含了所有的偶数。
+还可以使用集合的推导形式来定义整数的派生集合：
+2Z = {2x : x ∈ Z}，表示所有的偶数。
+3Z+1 = {3x + 1 : x ∈ Z}，表示形式为 3x + 1 的整数集合。
+也可以使用区间表示法来描述集合。间隔
+ (a, a) = (a,a] = [a,a) = ∅; however [a,a] = {a}.
+
+6幂集和基数
+对于集合X，它的幂集(Powerset)，记作Pow(X)，是X的所有子集构成的集合例如，对于集合 {a,b}，它的幂集为 Pow({a,b})= {Ø,{a}, {b},{a,b}}，即包含了空集、单元素集合{a}、 {b}，以及整个集合 {a, b}。
+集合x的基数(Cardinality)是指集合中元素的数量，通常用符号 ||、#(X) 或 card(x)表示。
+对于任意集合x，它的幂集的基数始终是2的x的基数次方即  |Pow(X)| = 2^|X|
+
+7笛卡尔积
+两个集合S和T的笛卡尔积，记作SxT，是由所有可能的有序对组成的集合
+SxT={(s,t):s∈S,t∈T}。
+例如，如果s= {a, b},T= {1,2},则SxT={(a, 1),(a,2),(b,1),(b,2)}。
+重要fact！
+∅ ×S =∅, for every S
+|S ×T| =|S|·|T|
+
+8 Formal language
+Σ —alphabet, a finite, nonempty se
+单词是由符号集合 Σ 中的有限字符序列组成的。
+空单词，记作 λ，是唯一一个没有任何符号的单词。
+单词的唯一操作是连接concatenation,，表示为 vw，wv，abw，wbv 等。
+注意：λw = w = wλ。
+连接后的单词长度等于连接前两个单词长度的和，即 length(vw) = length(v) + length(w)
+X0 ={λ}; X^i+1 = XX^i
+X∗ =X0∪X1∪X2∪...
+符号集合 Σ 的所有有限单词集合，即 Σ 的克林闭包 Kleene star ，通常用记号 Σ∗ 表示
+
+9 集合的重要的法则
+基本法则
+For all sets A, B, C:
+Commutativity A∪B =B∪A   A∩B =B∩A
+Associativity (A ∪B)∪C =A∪(B∪C)  (A ∩B)∩C =A∩(B∩C)
+Distribution  A∪(B ∩C)=(A∪B)∩(A∪C)  A∩(B ∪C)=(A∩B)∪(A∩C)
+Identity  A∪∅=A  A∩U =A  
+Complementation  A∪(Ac) = U   A∩(Ac) = ∅
+延申法则
+ Idempotence  A∩A=A A∪A=A
+ Double complementation  (Ac)c = A
+ Annihilation  A∩∅=∅ A∪U =U
+ de Morgan’s Laws  (A ∩B)c = Ac ∪Bc (A ∪B)c = Ac ∩Bc
+对欧律 If A is a set defined using ∩, ∪, ∅ and U, then dual(A) is the
+ expression obtained by replacing ∩ with ∪ (and vice-versa) and ∅
+ with U (and vice-versa)
+补集的独特性 A∩B =∅and A∪B =U if, and only if, B = Ac.
+
