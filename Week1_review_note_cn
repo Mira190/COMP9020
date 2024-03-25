@@ -1,0 +1,79 @@
+#第一周啦！
+1  命题
+ A⇒B AssumeAandproveB
+ A⇔B Prove“IfAthenB”and“IfBthenA”
+ ∀x.A ShowAholdsforeverypossiblevalueofx
+ ∃x.A FindavalueofxthatmakesAtrue
+
+2 命题否定
+AandB notAornotB
+ AorB notAandnotB
+ A⇒B AandnotB
+ A⇔B AandnotB,orBandnotA
+ ∀x.A ∃x.notA
+ ∃x.A ∀x.notA
+
+3数的定义
+自然数N = {0,1,2,...}
+整数 Z = {...,−1,0,1,2,...}
+正整数 N>0 = Z>0 = {1,2,...}
+有理数 (fractions) Q = m /n : m,n ∈ Z,n= 0 
+实数 (decimal or binary expansions) R
+R =a1a2...ak .b1b2..
+
+3 floor ceil
+ ⌊.⌋ : R −→ Z — floor of x, the greatest integer ≤ x
+ ⌈.⌉ : R −→ Z — ceiling of x, the least integer ≥ x
+⌊−x⌋ = −⌈x⌉，因此 ⌈x⌉ = −⌊−x⌋。
+对于任意整数 t：
+⌊x + t⌋ = ⌊x⌋ + t
+⌈x + t⌉ = ⌈x⌉ + t
+重要定理
+对于给定的整数 k、m 和 n（其中 k > 0 且 m ≥ n），在 n 和 m（包括 n 和 m）之间的 k 的倍数的数量是
+m/k的floor减去（n-1）/k的floor
+
+4 整除
+对于整数 m 和 n，如果存在整数 k，使得 n = k × m，则我们说 m 整除 n，记作 m|n。
+换句话说，如果 m|n，则我们称“n可被m整除”，“m是n的因数”，或“n是m的倍数”。
+如果 m 不整除 n，则记作 m∤n，意思是“m不整除n”
+
+5最大公约数 最小公倍数
+m 和 n 的最大公约数，记作 gcd(m, n)，是满足 d | m 和 d | n 的最大正整数 d。
+m 和 n 的最小公倍数，记作 lcm(m, n)，是满足 m | k 和 n | k 的最小正整数 k。
+特例：当 m 和 n 都为 0 时：
+gcd(0, 0) = 0，因为 0 是任何数的约数，而 0 是最大的非负整数。
+lcm(0, n) = lcm(m, 0) = 0，因为任何数与 0 的最小公倍数都是 0。
+对于 gcd(m, n) 和 lcm(m, n)，即使 m 或 n 是负数，它们也总是被视为非负数。
+ gcd(m,n) · lcm(m,n) = |m| · |n|
+
+6素数与互质
+如果一个大于 1 的数 n 只能被 ±1 和 ±n 整除，则它是素数。
+如果 m 和 n 的最大公约数 gcd(m, n) = 1，则它们是互质的
+
+7 欧几里得公式
+ gcd(m,n) =m  if m = n
+          =gcd(m −n,n) if m >n
+          =gcd(m,n −m) if m <n
+8 欧几里得除法引理
+For m ∈ Z, n ∈Z>0 there exists q,r ∈ Z with 0 ≤ r < n such that m=q·n+r
+将整数 m 除以正整数 n，商是整数 q，余数是整数 r，而且余数 r 在 0 到 n-1 之间
+一些定义
+Let m,p ∈ Z, n ∈ Z>0.
+m div n =⌊m/n⌋
+m%n=m−(m div n)·n
+m=(n) p if n|(m −p)
+ 重要！ 0 ≤(m%n)<n.
+ m=(n) p if, and only if, (m % n) = (p % n).
+ m=(n) (m % n)
+ If m =(n) m′ and p =(n) p′ then:
+ m+p=(n) m′ +p′ and
+ m·p =(n) m′ ·p′.
+
+8欧几里得快速公式
+For m,n ∈ Z, if m > n then gcd(m,n) = gcd(m % n,n)
+
+ gcd(m,n) =
+ m  if m = n or n =0
+ n  if m = 0
+ gcd(m % n,n) if m >n >0
+ gcd(m,n % m) if 0 < m <n
